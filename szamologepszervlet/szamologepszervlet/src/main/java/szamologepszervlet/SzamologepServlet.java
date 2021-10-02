@@ -38,10 +38,9 @@ public class SzamologepServlet extends HttpServlet{
 		if (operator == null) {
 			errorList.add("az operator parameter nem lehet ures");
 		} else {
-			if (Arrays.asList(new String[]{"+", "-", "*", "/"}).contains(operator)) {
-				return;
+			if (!Arrays.asList(new String[]{"+", "-", "*", "/"}).contains(operator)) {
+				errorList.add("nem tamogatott muvelet");
 			}
-			errorList.add("nem tamogatott muvelet");
 		}
 		
 	}
