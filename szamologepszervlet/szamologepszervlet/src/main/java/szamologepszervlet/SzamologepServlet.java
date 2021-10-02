@@ -38,18 +38,20 @@ public class SzamologepServlet extends HttpServlet{
 		if (operator == null) {
 			errorList.add("az operator parameter nem lehet ures");
 		} else {
-			if (!Arrays.asList(new String[]{"+", "-", "*", "/"}).contains(operator)) {
-				errorList.add("nem tamogatott muvelet");
+			if (Arrays.asList(new String[]{"+", "-", "*", "/"}).contains(operator)) {
+				return;
 			}
-		} 
+			errorList.add("nem tamogatott muvelet");
+		}
 		
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ResultDto resultDto = new ResultDto();
-		List<String> errorList = new ArrayList<String>();
-		
+		List<String> errorList;
+		errorList = new ArrayList<String>();
+
 		Double a = checkAndGetValueAsDouble(req, "a", errorList);
 		resultDto.setA(req.getParameter("a"));
 		
@@ -69,11 +71,10 @@ public class SzamologepServlet extends HttpServlet{
 		
 		resultDto.setResult(result);
 		resultDto.setErrorList(errorList);
-		// eltarolja a keres attributumba az osszes infot, 
-		// hogy a jsp is elerje
+
 		req.setAttribute("result", resultDto);
 		
-		// forward
+
 		RequestDispatcher rd = req.getSession()
 				.getServletContext( )
 				.getRequestDispatcher("/");
