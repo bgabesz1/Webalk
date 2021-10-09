@@ -19,7 +19,7 @@ public class MainController {
 	}
 
 	@PostMapping(path="")
-	public void newArticle(@RequestBody ArticleDto articleDto) {
+	public void newArticle(@RequestBody @Valid ArticleDto articleDto) {
 		articles.add(articleDto);
 	}
 
@@ -35,7 +35,7 @@ public class MainController {
 	}
 
 	@PutMapping(path = "{id}")
-	public void ReplaceArticle (@Valid @PathVariable("id") String id, @RequestBody ArticleDto articleDto){
+	public void ReplaceArticle (@Valid @PathVariable("id") String id, @RequestBody @Valid ArticleDto articleDto){
 		int found=findArticleById(id);
 
 		if (found != -1) {
