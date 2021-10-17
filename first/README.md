@@ -1,1 +1,0 @@
-Be kell importálni fejlesztő környezetbe(intelij, eclipse) a projectet, buildelni a pom.xml, majd a localhost:8080 weboldalon elérhető.
