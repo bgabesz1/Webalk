@@ -16,7 +16,7 @@ public class Auto {
     @Override
     public String toString() {
         return "Auto{" +
-                "motor=" + motor +
+                "motor=" + motor  +
                 ", kerek=" + Arrays.toString(kerek) +
                 ", tipus='" + tipus + '\'' +
                 '}';
