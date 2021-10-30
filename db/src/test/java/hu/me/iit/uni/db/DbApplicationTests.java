@@ -1,10 +1,10 @@
-package hu.me.iit.test;
+package hu.me.iit.uni.db;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TestApplicationTests {
+class DbApplicationTests {
 
 	@Test
 	void contextLoads() {
