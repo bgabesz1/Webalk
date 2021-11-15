@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Arrays;
 
-public class Auto {
+public class Auto  {
     private final Motor motor;
     private final Kerek[] kerek;
     private final String tipus;

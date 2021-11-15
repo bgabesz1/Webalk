@@ -20,4 +20,5 @@ public class Kerek implements com.company.Kerek {
                 " R " + atmero +
                 '}';
     }
+
 }

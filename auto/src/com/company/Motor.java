@@ -1,5 +1,5 @@
 package com.company;
 
-public interface Motor {
+public interface  Motor {
     String toString();
 }

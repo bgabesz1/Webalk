@@ -2,7 +2,7 @@ package com.company.impl;
 
 import com.company.Motor;
 
-public class Villanymotor implements Motor {
+public class  Villanymotor implements Motor {
     private final int teljesitmeny;
     private final int feszultseg;
 

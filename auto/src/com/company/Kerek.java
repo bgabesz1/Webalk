@@ -1,5 +1,5 @@
 package com.company;
 
-public interface Kerek {
+public interface Kerek  {
     String toString();
 }

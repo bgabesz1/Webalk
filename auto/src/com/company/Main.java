@@ -3,7 +3,7 @@ package com.company;
 import com.company.impl.BelsoegesuMotor;
 import com.company.impl.Kerek;
 
-public class Main {
+public class Main  {
     public static void main(String[] args) {
         Motor motor16 = new BelsoegesuMotor(160, 1680);
         Auto opelAstra = new Auto(motor16, get4kerek(), "Opel Astra");
