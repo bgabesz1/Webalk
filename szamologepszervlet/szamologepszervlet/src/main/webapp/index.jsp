@@ -10,6 +10,7 @@
             new szamologepszervlet.ResultDto();
 
 
+
     String resultText = (result == null) ?
             "" : "result " + result.getResult().toString();
 %>

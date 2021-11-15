@@ -2,6 +2,7 @@ package szamologepszervlet;
 
 import java.util.List;
 
+
 public class ResultDto {
     private String a;
     private String b;
