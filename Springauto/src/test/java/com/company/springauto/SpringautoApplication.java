@@ -49,7 +49,7 @@ void toStringBelsoegesuMotorTest() {
     Kerek kerek = new com.company.springauto.impl.Kerek(szelesseg,atmero,kopenyMagassag);
         final String result = kerek.toString();
         assertEquals(expected,result);
-    }
+        }
     @Test
     void MotorhívásTest() {
         final String expected = "Auto{motor=Motor [teljesitmeny=160, ccm=120], kerek=[Kerek{205/15 R 65}, Kerek{205/15 R 65}, Kerek{205/15 R 65}, Kerek{205/15 R 65}], tipus='Ford'}";

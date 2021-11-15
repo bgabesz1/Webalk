@@ -18,4 +18,5 @@ public class BelsoegesuMotor implements Motor {
                 ", ccm=" + ccm +
                 '}';
     }
+
 }

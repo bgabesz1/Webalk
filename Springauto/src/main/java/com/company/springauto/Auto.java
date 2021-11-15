@@ -21,4 +21,5 @@ public class Auto {
                 ", tipus='" + tipus + '\'' +
                 '}';
     }
+
 }

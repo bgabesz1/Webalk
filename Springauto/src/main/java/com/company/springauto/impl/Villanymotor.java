@@ -18,4 +18,5 @@ public class Villanymotor implements Motor {
                 ", feszultseg=" + feszultseg +
                 '}';
     }
+
 }
