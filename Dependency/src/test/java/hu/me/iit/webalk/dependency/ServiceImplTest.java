@@ -14,9 +14,11 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class ServiceImplTest {
 
-    @Mock Dependency dependency;
+    @Mock
+    Dependency dependency;
 
-    @InjectMocks ServiceImpl service;
+    @InjectMocks
+    ServiceImpl service;
 
     @Test
     void calculateTest() {
@@ -42,8 +44,8 @@ class ServiceImplTest {
     }
 
     @Test
-    // Is the service calls the dependency?
-    // Is the return value of dependency method used?
+        // Is the service calls the dependency?
+        // Is the return value of dependency method used?
     void dependencyReturnValueIsUsedTest() {
         // GIVEN
         final int FIVE = 5;
@@ -73,6 +75,6 @@ class ServiceImplTest {
         ArgumentCaptor<Integer> captor = ArgumentCaptor.forClass(Integer.class);
 
         verify(dependency, times(1)).helpWithParameterNoReturnValue(captor.capture());
-        assertEquals(FIVE,captor.getValue());
+        assertEquals(FIVE, captor.getValue());
     }
 }

@@ -1,11 +1,12 @@
 package hu.me.iit.webtalk.first;
 
 import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.ArrayList;
 
 @Component
-public class ArticleRepositoryMemoryImpl implements ArticleRepository{
+public class ArticleRepositoryMemoryImpl implements ArticleRepository {
     private final List<ArticleDto> articles = new ArrayList<>();
 
     public int findArticleById(Long id) {

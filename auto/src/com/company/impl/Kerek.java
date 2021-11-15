@@ -15,7 +15,7 @@ public class Kerek implements com.company.Kerek {
     @Override
     public String toString() {
         return "Kerek{" +
-                 szelesseg +
+                szelesseg +
                 "/" + kopenyMagassag +
                 " R " + atmero +
                 '}';

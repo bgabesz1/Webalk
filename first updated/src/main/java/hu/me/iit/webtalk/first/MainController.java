@@ -9,33 +9,33 @@ import java.util.List;
 
 @RestController
 
-@RequestMapping(path="article")
+@RequestMapping(path = "article")
 public class MainController {
 
-	private final ArticleService articleService;
+    private final ArticleService articleService;
 
-	public MainController(ArticleService articleService) {
-		this.articleService = articleService;
-	}
+    public MainController(ArticleService articleService) {
+        this.articleService = articleService;
+    }
 
-	@GetMapping(path="", produces= MediaType.APPLICATION_JSON_VALUE)
-	public List<ArticleDto> allArticles() {
-		return articleService.findAll();
-	}
+    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<ArticleDto> allArticles() {
+        return articleService.findAll();
+    }
 
-	@PostMapping(path="")
-	public void newArticle(@RequestBody @Valid ArticleDto articleDto) {
-		articleService.save(articleDto);
-	}
+    @PostMapping(path = "")
+    public void newArticle(@RequestBody @Valid ArticleDto articleDto) {
+        articleService.save(articleDto);
+    }
 
-	@PutMapping(path="/")
-	public void replaceArticle(@RequestBody @Valid ArticleDto articleDto) {
-		articleService.save(articleDto);
-	}
+    @PutMapping(path = "/")
+    public void replaceArticle(@RequestBody @Valid ArticleDto articleDto) {
+        articleService.save(articleDto);
+    }
 
-	@DeleteMapping (path="/{id}")
-	public void deleteArticle(@PathVariable("id") Long id) {
-		articleService.deleteById(id);
-	}
+    @DeleteMapping(path = "/{id}")
+    public void deleteArticle(@PathVariable("id") Long id) {
+        articleService.deleteById(id);
+    }
 
 }

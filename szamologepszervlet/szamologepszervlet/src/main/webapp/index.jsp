@@ -4,15 +4,14 @@
 </head>
 <body>
 <%
-// ha servettol jott, akkor van, ha elso keres, akkor nincs 
-szamologepszervlet.ResultDto result = (request.getAttribute("result") != null) ? 
-			(szamologepszervlet.ResultDto) request.getAttribute("result") :
-			new szamologepszervlet.ResultDto();
+    // ha servettol jott, akkor van, ha elso keres, akkor nincs
+    szamologepszervlet.ResultDto result = (request.getAttribute("result") != null) ?
+            (szamologepszervlet.ResultDto) request.getAttribute("result") :
+            new szamologepszervlet.ResultDto();
 
 
-
-String resultText = (result == null) ?
-				"" : "result " + result.getResult().toString();
+    String resultText = (result == null) ?
+            "" : "result " + result.getResult().toString();
 %>
 
 ver: 0.5
@@ -26,11 +25,9 @@ ver: 0.5
         <option value="/" <%="/".equals(result.getOperator())? "selected" : ""%> > /
     </select><br>
 
-<%= resultText %> <br>
-    <input type="submit" /><br>
+    <%= resultText %> <br>
+    <input type="submit"/><br>
 </form>
-
-
 
 
 </body>

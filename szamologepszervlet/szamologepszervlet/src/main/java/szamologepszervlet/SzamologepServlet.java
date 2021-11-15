@@ -14,71 +14,71 @@ import jakarta.servlet.http.HttpServletResponse;
 import szamologepszervlet.model.Szamologep;
 
 @WebServlet("/szamologep.do")
-public class SzamologepServlet extends HttpServlet{
+public class SzamologepServlet extends HttpServlet {
 
-	private Double checkAndGetValueAsDouble(HttpServletRequest req, String parameterName, List<String> errorList) {
-		Double value = 0.0;
-		String stringValue = req.getParameter(parameterName);
-		if (stringValue == null) {
-			errorList.add("a(z) " + parameterName + " parameter nem lehet lehet ures");
-		} else {
-			try {
-				value = Double.parseDouble(stringValue);
-			} catch (NumberFormatException ex) {
-				errorList.add("a(z) " + parameterName + " parameter szam kell legyen");
-			}
-		}
-		
-		return value;
-	}
-	
-	
-	private void checkOperator(String operator, List<String> errorList) {
-		
-		if (operator == null) {
-			errorList.add("az operator parameter nem lehet ures");
-		} else {
-			if (!Arrays.asList(new String[]{"+", "-", "*", "/"}).contains(operator)) {
-				errorList.add("nem tamogatott muvelet");
-			}
-		}
-		
-	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ResultDto resultDto = new ResultDto();
-		List<String> errorList;
-		errorList = new ArrayList<String>();
+    private Double checkAndGetValueAsDouble(HttpServletRequest req, String parameterName, List<String> errorList) {
+        Double value = 0.0;
+        String stringValue = req.getParameter(parameterName);
+        if (stringValue == null) {
+            errorList.add("a(z) " + parameterName + " parameter nem lehet lehet ures");
+        } else {
+            try {
+                value = Double.parseDouble(stringValue);
+            } catch (NumberFormatException ex) {
+                errorList.add("a(z) " + parameterName + " parameter szam kell legyen");
+            }
+        }
 
-		Double a = checkAndGetValueAsDouble(req, "a", errorList);
-		resultDto.setA(req.getParameter("a"));
-		
-		Double b = checkAndGetValueAsDouble(req, "b", errorList);
-		resultDto.setB(req.getParameter("b"));
-		
-		String operator = req.getParameter("operator");
-		resultDto.setOperator(operator);
+        return value;
+    }
 
-		checkOperator(operator, errorList);
-		
-		
-		Double result = 0.0;
-		if (errorList.isEmpty()) {
-			result = new Szamologep().calculate(a, b, operator);
-		}
-		
-		resultDto.setResult(result);
-		resultDto.setErrorList(errorList);
 
-		req.setAttribute("result", resultDto);
-		
+    private void checkOperator(String operator, List<String> errorList) {
 
-		RequestDispatcher rd = req.getSession()
-				.getServletContext( )
-				.getRequestDispatcher("/");
-		
-		rd.forward(req, resp);
-	}
+        if (operator == null) {
+            errorList.add("az operator parameter nem lehet ures");
+        } else {
+            if (!Arrays.asList(new String[]{"+", "-", "*", "/"}).contains(operator)) {
+                errorList.add("nem tamogatott muvelet");
+            }
+        }
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ResultDto resultDto = new ResultDto();
+        List<String> errorList;
+        errorList = new ArrayList<String>();
+
+        Double a = checkAndGetValueAsDouble(req, "a", errorList);
+        resultDto.setA(req.getParameter("a"));
+
+        Double b = checkAndGetValueAsDouble(req, "b", errorList);
+        resultDto.setB(req.getParameter("b"));
+
+        String operator = req.getParameter("operator");
+        resultDto.setOperator(operator);
+
+        checkOperator(operator, errorList);
+
+
+        Double result = 0.0;
+        if (errorList.isEmpty()) {
+            result = new Szamologep().calculate(a, b, operator);
+        }
+
+        resultDto.setResult(result);
+        resultDto.setErrorList(errorList);
+
+        req.setAttribute("result", resultDto);
+
+
+        RequestDispatcher rd = req.getSession()
+                .getServletContext()
+                .getRequestDispatcher("/");
+
+        rd.forward(req, resp);
+    }
 
 }
