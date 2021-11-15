@@ -10,6 +10,6 @@ public class MainController {
 
     @Autowired
     public void setService(Service service) {
-        this.service = service;
+         this.service = service;
     }
 }

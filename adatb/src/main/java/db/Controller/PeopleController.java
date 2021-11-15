@@ -43,9 +43,8 @@ public class PeopleController {
     @GetMapping
     void findAdultPeople(@RequestParam("age") int age){
         List<PeopleDto> peopleDtoList = new ArrayList<>();
-        for(PeopleModle people : peopleService.findByAgeGreaterThan(age);{
+        for(PeopleModle people : peopleService.findByAgeGreaterThan(age));{
             peopleDtoList.add(new PeopleDto(people));
         }
-        return peopleDtoList;
     }
 }

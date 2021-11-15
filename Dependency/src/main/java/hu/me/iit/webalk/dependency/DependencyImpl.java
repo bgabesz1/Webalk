@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Component
 public class DependencyImpl implements Dependency {
     @Override
-    public void helpNoParameterNoReturnValue() {
+    public void helpNoParameterNoReturnValue()  {
     }
 
     @Override

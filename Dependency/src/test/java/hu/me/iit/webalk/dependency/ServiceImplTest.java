@@ -24,7 +24,7 @@ class ServiceImplTest {
     void calculateTest() {
         // GIVEN
 
-        // WHEN
+            // WHEN
         service.calculate();
 
         // THEN
