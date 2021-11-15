@@ -9,7 +9,6 @@ public class ArticleDto {
 
     @NotNull
     private Long id;
-
     @NotNull
     @NotBlank
     private String author;

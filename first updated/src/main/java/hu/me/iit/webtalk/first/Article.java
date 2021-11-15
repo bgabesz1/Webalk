@@ -5,7 +5,6 @@ import javax.validation.constraints.NotNull;
 public class Article {
     @NotNull
     private String id;
-
     @NotNull
     private String author;
 

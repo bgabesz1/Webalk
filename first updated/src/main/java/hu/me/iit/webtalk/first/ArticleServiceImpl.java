@@ -36,4 +36,5 @@ public class ArticleServiceImpl implements ArticleService {
     public void deleteById(Long id) {
         articleRepository.deleteById(id);
     }
+
 }

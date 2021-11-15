@@ -10,4 +10,5 @@ public interface ArticleService {
     Long save(ArticleDto articleDto);
 
     void deleteById(Long id);
+
 }
