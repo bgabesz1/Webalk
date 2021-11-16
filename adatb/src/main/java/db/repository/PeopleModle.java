@@ -8,12 +8,11 @@ import javax.persistence.Id;
 public class PeopleModle {
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
     private int age;
 
     private String name;
-
 
     public Long getId() {
         return id;
@@ -38,8 +37,15 @@ public class PeopleModle {
     public void setName(String name) {
         this.name = name;
     }
-    public PeopleModle toPeople(){
-        return new PeopleModle(id, age, name);
+
+    public PeopleModle() {
+    }
+
+
+    public PeopleModle(Long id, int age, String name) {
+        this.id = id;
+        this.age = age;
+        this.name = name;
     }
 }
 

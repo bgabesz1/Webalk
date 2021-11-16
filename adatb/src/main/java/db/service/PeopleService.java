@@ -4,13 +4,14 @@ package db.service;
 import db.repository.PeopleModle;
 
 public interface PeopleService {
-    Iterable<PeopleModle> getAllPeople();
-    PeopleModle create(PeopleModle people);
-
+    Iterable<People> getAllPeople();
+    People create(People people);
 
     void delete(Long id);
-    PeopleModle getById(Long id);
-    void save(PeopleModle people);
 
-    PeopleModle[] findByAgeGreaterThan(int age);
+    People getById(Long id) throws NoSuchEntityExceotion;
+
+    void save(People people);
+
+    Iterable findByIdAgeGreather(int age);
 }

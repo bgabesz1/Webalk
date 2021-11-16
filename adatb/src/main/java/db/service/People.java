@@ -3,23 +3,11 @@ package db.service;
 import db.repository.PeopleModle;
 
 public class People {
-
-    Long id;
+    private Long id;
 
     private int age;
 
     private String name;
-
-
-    public People() {
-    }
-    public People(PeopleModle people) {
-        this.age = people.getAge();
-        this.name = people.getName();
-        this.id = people.getId();
-
-    }
-
 
     public Long getId() {
         return id;
@@ -42,6 +30,21 @@ public class People {
     }
 
     public void setName(String name) {
+        this.name = name;
+    }
+
+    public People() {
+    }
+
+    public People(PeopleModle people) {
+        this.id = people.getId();
+        this.age = people.getAge();
+        this.name = people.getName();
+    }
+
+    public People(Long id, int age, String name) {
+        this.id = id;
+        this.age = age;
         this.name = name;
     }
 
