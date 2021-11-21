@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(path = "/People")
+@RequestMapping(path = "/people")
 public class PeopleController {
     private final PeopleService peopleService;
 
@@ -48,10 +48,10 @@ public class PeopleController {
         return new PeopleDto(peopleService.getById(id));
     }
 
-   /* @PutMapping
+    @PutMapping
     void save(@RequestBody @Valid PeopleDto peopleDto){
         peopleService.save(peopleDto.toPeople());
-    }*/
+    }
 
 
 }
